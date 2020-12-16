@@ -1,17 +1,44 @@
-package view;
-
 /**
- *
- * @author whiwf
+ * Draw + DrawFrame
  */
-public class TextDialog extends javax.swing.JDialog {
+package ui;
 
-    /**
-     * Creates new form TextDialog
-     */
-    public TextDialog(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javafx.scene.paint.Color;
+import javax.swing.JScrollPane;
+
+public class Main extends javax.swing.JFrame {
+
+    private Paint inkPaint;
+    private int inkPaintWidth;
+    private int inkPaintHeight;
+
+//    private final int CONTENT_PANE_WIDTH = 1300;
+//    private final int CONTENT_PANE_HEIGHT = 700;
+
+    public Main() {
         initComponents();
+        setLayout(new BorderLayout());
+        //this.setSize(CONTENT_PANE_WIDTH, CONTENT_PANE_HEIGHT);
+        
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation(dim.width / 2 - getSize().width / 2, dim.height / 2 - getSize().height / 2);
+        inkPaintWidth = dim.width - 150;
+        inkPaintHeight = dim.height - 160;
+        //construct layout manager
+        Content contentPanel = new Content();
+        //create tool bar
+
+        //create coordianate bar
+        CoordinateBar coordinateBar = new CoordinateBar();
+        //create color chooser
+
+        //set components
+        add(contentPanel);
+        add(coordinateBar, BorderLayout.PAGE_END);
+        
     }
 
     /**
@@ -23,17 +50,18 @@ public class TextDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Paint");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 701, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 491, Short.MAX_VALUE)
         );
 
         pack();
@@ -56,31 +84,26 @@ public class TextDialog extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TextDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TextDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TextDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TextDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                TextDialog dialog = new TextDialog(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                new Main().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+    
+    //get component
 }

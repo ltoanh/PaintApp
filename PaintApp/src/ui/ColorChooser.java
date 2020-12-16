@@ -1,15 +1,15 @@
-package view;
-
 /**
- *
- * @author whiwf
+ * ColorChooser + ColorDialog
+ * ColorDialog: su dung JColorChooser
  */
-public class Paint extends javax.swing.JPanel {
+package ui;
+
+public class ColorChooser extends javax.swing.JPanel {
 
     /**
-     * Creates new form Paint
+     * Creates new form ColorChooser
      */
-    public Paint() {
+    public ColorChooser() {
         initComponents();
     }
 

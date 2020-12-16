@@ -1,9 +1,9 @@
+/**
+ * PaintPanel
+ */
+
 package ui;
 
-/**
- *
- * @author whiwf
- */
 public class Paint extends javax.swing.JPanel {
 
     /**

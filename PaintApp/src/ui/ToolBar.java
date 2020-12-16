@@ -1,15 +1,15 @@
-/**
- * ColorChooser + ColorDialog
- * ColorDialog: su dung JColorChooser
- */
-package view;
+package ui;
 
-public class ColorChooser extends javax.swing.JPanel {
+/**
+ *
+ * @author whiwf
+ */
+public class ToolBar extends javax.swing.JPanel {
 
     /**
-     * Creates new form ColorChooser
+     * Creates new form ToolBar
      */
-    public ColorChooser() {
+    public ToolBar() {
         initComponents();
     }
 

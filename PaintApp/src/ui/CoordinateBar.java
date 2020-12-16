@@ -1,15 +1,11 @@
-package view;
+package ui;
 
-/**
- *
- * @author whiwf
- */
-public class ToolBar extends javax.swing.JPanel {
+public class CoordinateBar extends javax.swing.JPanel {
 
     /**
-     * Creates new form ToolBar
+     * Creates new form CoordinateBar
      */
-    public ToolBar() {
+    public CoordinateBar() {
         initComponents();
     }
 
@@ -26,11 +22,11 @@ public class ToolBar extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 798, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 35, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

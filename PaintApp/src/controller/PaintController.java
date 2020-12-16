@@ -3,10 +3,6 @@
  */
 package controller;
 
-/**
- *
- * @author whiwf
- */
-public class Paint {
+public class PaintController {
     
 }

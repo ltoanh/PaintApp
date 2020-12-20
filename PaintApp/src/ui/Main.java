@@ -11,6 +11,9 @@ import javax.swing.JScrollPane;
 
 public class Main extends javax.swing.JFrame {
 
+    private ToolBar toolBar;
+    private CoordinateBar coordinateBar;
+    private ColorChooser colorChooser;
     private Paint inkPaint;
     private int inkPaintWidth;
     private int inkPaintHeight;
@@ -28,17 +31,21 @@ public class Main extends javax.swing.JFrame {
         inkPaintWidth = dim.width - 150;
         inkPaintHeight = dim.height - 160;
         // construct layout manager
-        Content contentPanel = new Content();
+        Content content = new Content();
         // create tool bar
-
+        toolBar = new ToolBar();
+        
         // create coordianate bar
-        CoordinateBar coordinateBar = new CoordinateBar();
+        coordinateBar = new CoordinateBar();
         
         // create color chooser
-
+        colorChooser = new ColorChooser();
+        
         // set components
-        add(contentPanel);
+        add(colorChooser, BorderLayout.PAGE_START);
+        add(content);
         add(coordinateBar, BorderLayout.PAGE_END);
+        add(toolBar, BorderLayout.WEST);
 
     }
 
@@ -111,4 +118,15 @@ public class Main extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     // get component
+    public CoordinateBar getCoordinateBar(){
+        return this.coordinateBar;
+    }
+    
+    public Paint getInkPaint(){
+        return this.inkPaint;
+    }
+    
+    public Main getDrawFrame(){
+        return this;
+    }
 }

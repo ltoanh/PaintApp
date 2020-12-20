@@ -3,10 +3,6 @@ package ui;
 import java.awt.Graphics;
 import javafx.scene.paint.Color;
 
-/**
- *
- * @author whiwf
- */
 public class Content extends javax.swing.JPanel {
 
     public Content() {

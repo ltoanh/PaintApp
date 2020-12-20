@@ -12,6 +12,7 @@ public class CoordinateBar extends javax.swing.JPanel {
      */
     public CoordinateBar() {
         initComponents();
+        
         jLabel1.setText("0 X 0");
         jLabel2.setText("0 X 0");
     }

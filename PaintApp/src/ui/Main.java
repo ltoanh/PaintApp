@@ -6,6 +6,7 @@ package ui;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.JFrame;
 //import javafx.scene.paint.Color;
 //import javax.swing.JScrollPane;
 
@@ -17,15 +18,11 @@ public class Main extends javax.swing.JFrame {
     private Paint inkPaint;
     private int inkPaintWidth;
     private int inkPaintHeight;
-
-    // private final int CONTENT_PANE_WIDTH = 1300;
-    // private final int CONTENT_PANE_HEIGHT = 700;
-
     public Main() {
         initComponents();
         setLayout(new BorderLayout());
-        // this.setSize(CONTENT_PANE_WIDTH, CONTENT_PANE_HEIGHT);
-
+        setExtendedState(JFrame.MAXIMIZED_BOTH); //set fullscreen
+        
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width / 2 - getSize().width / 2, dim.height / 2 - getSize().height / 2);
         inkPaintWidth = dim.width - 150;

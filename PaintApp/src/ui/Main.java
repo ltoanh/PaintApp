@@ -6,8 +6,8 @@ package ui;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import javafx.scene.paint.Color;
-import javax.swing.JScrollPane;
+//import javafx.scene.paint.Color;
+//import javax.swing.JScrollPane;
 
 public class Main extends javax.swing.JFrame {
 

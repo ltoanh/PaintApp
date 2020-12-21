@@ -1,3 +1,7 @@
+/**
+ * ColorChooser + ColorDialog
+ * ColorDialog: dung jcolorchooser
+ */
 package ui;
 
 public class ColorChooser extends javax.swing.JPanel {

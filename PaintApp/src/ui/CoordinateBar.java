@@ -12,10 +12,20 @@ public class CoordinateBar extends javax.swing.JPanel {
     /**
      * Creates new form CoordinateBar
      */
+    private String posX;
+    private String posY;
+
     public CoordinateBar() {
         initComponents();
-        jLabel1.setText("0 X 0");
+        this.addMouseListener(new MouseAdapter() {
+            public void MouseClicked(MouseEvent e) {
+                posX = String.valueOf((int) e.getPoint().getX());
+                posY = String.valueOf((int) e.getPoint().getY());
+            }
+        });
+        jLabel1.setText(posX+", "+posY);
         jLabel2.setText("0 X 0");
+        
     }
 
     /**

@@ -35,11 +35,11 @@ public class Main extends javax.swing.JFrame {
         CoordinateBar coordinateBar = new CoordinateBar();
         
         // create color chooser
-
+        ColorChooser p = new ColorChooser();
         // set components
         add(contentPanel);
         add(coordinateBar, BorderLayout.PAGE_END);
-
+        add(p);
     }
 
     /**

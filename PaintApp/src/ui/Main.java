@@ -115,15 +115,4 @@ public class Main extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     // get component
-    public CoordinateBar getCoordinateBar(){
-        return this.coordinateBar;
-    }
-    
-    public Paint getInkPaint(){
-        return this.inkPaint;
-    }
-    
-    public Main getDrawFrame(){
-        return this;
-    }
 }

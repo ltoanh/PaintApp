@@ -7,6 +7,8 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JToolBar;
 //import javafx.scene.paint.Color;
 //import javax.swing.JScrollPane;
 
@@ -18,6 +20,7 @@ public class Main extends javax.swing.JFrame {
     private Paint inkPaint;
     private int inkPaintWidth;
     private int inkPaintHeight;
+    private JScrollPane sp;
     public Main() {
         initComponents();
         setLayout(new BorderLayout());
@@ -31,7 +34,7 @@ public class Main extends javax.swing.JFrame {
         Content content = new Content();
         // create tool bar
         toolBar = new ToolBar();
-        
+;        
         // create coordianate bar
         coordinateBar = new CoordinateBar();
         
@@ -43,7 +46,7 @@ public class Main extends javax.swing.JFrame {
         add(content);
         add(coordinateBar, BorderLayout.PAGE_END);
         add(toolBar, BorderLayout.WEST);
-
+       //add(new Paint());
     }
 
     /**
@@ -125,5 +128,9 @@ public class Main extends javax.swing.JFrame {
     
     public Main getDrawFrame(){
         return this;
+    }
+    public JScrollPane getSP()
+    {
+    	return this.sp;
     }
 }

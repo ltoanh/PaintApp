@@ -2,9 +2,9 @@ package model;
 
 import java.awt.BasicStroke;
 import java.awt.Font;
-import javafx.scene.paint.Color;
+import java.awt.Color;
 
-public class Shape {
+public class NewShape {
     private int x1;
 	private int x2;
 	private int y1;
@@ -22,7 +22,7 @@ public class Shape {
 
 	public int group = 0;
 
-	public Shape(int x1, int y1, int x2, int y2, Color color, BasicStroke stroke, int shape, Color fill,
+	public NewShape(int x1, int y1, int x2, int y2, Color color, BasicStroke stroke, int shape, Color fill,
 			boolean transparent) {
 		this.x1 = x1;
 		this.x2 = x2;
@@ -36,7 +36,7 @@ public class Shape {
 		this.transparent = transparent;
 	}
 
-	public Shape(int x1, int y1, int fontSize, Font font, Color color, BasicStroke stroke, int shape, String message) {
+	public NewShape(int x1, int y1, int fontSize, Font font, Color color, BasicStroke stroke, int shape, String message) {
 		this.x1 = x1;
 		this.y1 = y1;
 		this.y2 = 0;
@@ -49,7 +49,7 @@ public class Shape {
 		this.message = message;
 	}
 
-	public Shape(int x1, int y1, int x2, int y2, Color color, BasicStroke stroke, int shape, int group) {
+	public NewShape(int x1, int y1, int x2, int y2, Color color, BasicStroke stroke, int shape, int group) {
 		this.x1 = x1;
 		this.x2 = x2;
 		this.y1 = y1;

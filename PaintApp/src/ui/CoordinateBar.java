@@ -1,20 +1,23 @@
 package ui;
 
-import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import javax.swing.JLabel;
 
 public class CoordinateBar extends javax.swing.JPanel {
 
     /**
      * Creates new form CoordinateBar
      */
+    private JLabel frameSize;
+
     public CoordinateBar() {
         initComponents();
-        
+
         jLabel1.setText("0 X 0");
         jLabel2.setText("0 X 0");
+    }
+
+    public JLabel getFrameSize() {
+        return frameSize;
     }
 
     /**

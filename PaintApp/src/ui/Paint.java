@@ -13,7 +13,7 @@ public class Paint extends javax.swing.JPanel {
     /**
      * Creates new form Paint
      */
-    private Color fillColor;
+    private Color fillColor, currentColor;
     
     private int inkPanelWidth;
     private int inkPanelHeight;
@@ -22,6 +22,8 @@ public class Paint extends javax.swing.JPanel {
         initComponents();
         setBackground(Color.WHITE);
         setLocation(10, 10);
+        this.currentColor = Color.BLACK;
+        
     }
 
     

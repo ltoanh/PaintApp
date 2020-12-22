@@ -39,7 +39,7 @@ public class Main extends javax.swing.JFrame {
         content.add(sp);
 
         // create tool bar
-        toolBar = new ToolBar();
+        toolBar = new ToolBar(this);
 
         // create coordianate bar
         coordinateBar = new CoordinateBar();

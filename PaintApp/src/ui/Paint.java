@@ -3,31 +3,50 @@
  */
 package ui;
 
+import static com.sun.javafx.geom.BaseBounds.BoundsType.RECTANGLE;
+import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Toolkit;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.Shape;
+import static java.awt.SystemColor.TEXT;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+//import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.Stack;
+import static javafx.scene.shape.DrawMode.LINE;
+import model.NewShape;
 
-public class Paint extends javax.swing.JPanel implements MouseMotionListener {
+public class Paint extends javax.swing.JPanel implements MouseMotionListener, MouseListener {
 
     /**
      * Creates new form Paint
      */
     private Color fillColor, currentColor;
-
+    private NewShape s;
     private int inkPanelWidth;
     private int inkPanelHeight;
     private Main frame;
-    
+    private Stack<NewShape> shapes;
+    private int x1, x2, y1, y2;
+    private int grouped;
+    private BasicStroke stroke = new BasicStroke((float) 2);
+    //private Graphics2D graphics2D;
+    private int activeTool = 9;
+    private final int PENCIL_TOOL = 0;
+
     public Paint(Main frame) {
         initComponents();
         setBackground(Color.WHITE);
         setLocation(10, 10);
         currentColor = Color.BLACK;
+        //fillColor = Color.pink;
         addMouseMotionListener(this);
         this.frame = frame;
+        this.shapes = new Stack<NewShape>();
+        grouped = 1;
     }
 
     public void printCoords(MouseEvent e) {
@@ -66,7 +85,20 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener {
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        System.out.println("drag");
+//        Graphics g = getGraphics();
+//        g.setColor(Color.GREEN);
+//        g.drawOval(e.getX(), e.getY(), 10, 10);
+
+        Color primary = currentColor;
+        printCoords(e);
+        x2 = e.getX();
+        y2 = e.getY();
+        if (activeTool == PENCIL_TOOL) {
+            shapes.push(new NewShape(x1, y1, x2, y2, primary, stroke, 1, grouped));
+            repaint();
+            x1 = x2;
+            y1 = y2;
+        }
     }
 
     @Override
@@ -74,4 +106,50 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener {
         printCoords(e);
     }
 
+    @Override
+    public void paintComponent(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        for (NewShape s : shapes) {
+            g2.setColor(s.getColor());
+            g2.setStroke(s.getStroke());
+            if (s.getShape() == 1) {
+                g2.drawLine(s.getx1(), s.gety1(), s.getx2(), s.gety2());
+            }
+        }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        printCoords(e);
+        x1 = e.getX();
+        y1 = e.getY();
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        grouped++;
+        Color primary = currentColor;
+        shapes.push(new NewShape(x1, y1, x2, y2, primary, stroke, 1, grouped));
+        repaint();
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setTool(int tool) {
+        this.activeTool = tool;
+    }
 }

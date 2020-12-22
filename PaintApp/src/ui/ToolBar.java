@@ -24,11 +24,14 @@ public class ToolBar extends javax.swing.JPanel {
     private Dimension newDimension;
     private File f;
     private JFileChooser fc;
-
-    public ToolBar() {
+    TextDialog td;
+    public ToolBar(Main frame) {
         initComponents();
-        fc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-        //frame = new Main();
+        this.frame = frame;
+        // fc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+        fc = new JFileChooser(new File("."));
+        fc.setFileFilter(new FileNameExtensionFilter("Image Files", "jpg", "png"));
+       
     }
 
     /**
@@ -83,14 +86,29 @@ public class ToolBar extends javax.swing.JPanel {
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Pencil-24.png"))); // NOI18N
         jButton5.setText("Pencil");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Line-24.png"))); // NOI18N
         jButton6.setText("Line");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rectangle-24.png"))); // NOI18N
         jButton7.setText("Retangle");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Circled.png"))); // NOI18N
@@ -199,7 +217,6 @@ public class ToolBar extends javax.swing.JPanel {
 //            System.out.println("Save as file: " + f.getAbsolutePath());
 //            //openFile(f);
 //        }
-
         JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 
         int returnValue = jfc.showOpenDialog(null);
@@ -231,6 +248,21 @@ public class ToolBar extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        frame.getInkPanel().setTool(0);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        frame.getInkPanel().setTool(1);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        frame.getInkPanel().setTool(2);
+    }//GEN-LAST:event_jButton7ActionPerformed
 //private void saveFile(File file) throws IOException{
 //    BufferedImage im = makePanel(Main.getInkPaint());
 //		ImageIO.write(im, "png", file);
@@ -273,5 +305,4 @@ public class ToolBar extends javax.swing.JPanel {
 //            frame.getSP().setSize(width, height);
 //        }
 //    }
-
 }

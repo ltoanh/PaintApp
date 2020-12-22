@@ -35,12 +35,13 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
     private Main frame;
     private Stack<NewShape> shapes;
     private int x1, x2, y1, y2;
-    private BasicStroke stroke = new BasicStroke((float) 2);
-
- //   private boolean dragged = false;
+    private BasicStroke stroke = new BasicStroke((float) 1);
+    private Graphics2D graphics2D;
+    BufferedImage canvas;
+    //   private boolean dragged = false;
 
     private int activeTool = 9;
-    
+
     private final int PENCIL_TOOL = 0;
     private final int LINE_TOOL = 1;
     private final int RECTANGLE_TOOL = 2;
@@ -48,7 +49,7 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
     private final int TEXT_TOOL = 4;
     private final int ERASE_TOOL = 5;
     private final int CLEAR_TOOL = 6;
-    
+
     private final int LINE = 1;
 
     public Paint(Main frame) {
@@ -109,6 +110,12 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
 
     @Override
     public void paintComponent(Graphics g) {
+        if (canvas == null) {
+            canvas = new BufferedImage(inkPanelWidth, inkPanelHeight, BufferedImage.TYPE_INT_ARGB);
+            graphics2D = canvas.createGraphics();
+            graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+//            clear();
+        }
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -155,7 +162,7 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
 
     @Override
     public void mousePressed(MouseEvent e) {
-        
+
     }
 
     @Override
@@ -183,4 +190,8 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
         this.activeTool = tool;
     }
 
+    void setThickness(float f) {
+        stroke = new BasicStroke(f);
+        graphics2D.setStroke(stroke);
+    }
 }

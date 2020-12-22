@@ -34,6 +34,15 @@ public class ToolBar extends javax.swing.JPanel {
 
     }
 
+    private void getLineWidth() {
+        try {
+            String currentLine = (String) comboBox.getSelectedItem();
+            frame.getInkPanel().setThickness(Float.valueOf(currentLine));
+        } catch (NumberFormatException e) {
+            System.out.println(e);
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,6 +64,7 @@ public class ToolBar extends javax.swing.JPanel {
         erase = new javax.swing.JButton();
         clear = new javax.swing.JButton();
         comboBox = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         newFile.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         newFile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Create New-24.png"))); // NOI18N
@@ -147,12 +157,10 @@ public class ToolBar extends javax.swing.JPanel {
         });
 
         comboBox.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Line Width", "1", "2", "3", "4", "5", "6", "7", "8", " " }));
-        comboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxActionPerformed(evt);
-            }
-        });
+        comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", " " }));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel1.setText("Line Width");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -171,7 +179,10 @@ public class ToolBar extends javax.swing.JPanel {
                     .addComponent(circle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(text, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(comboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rectangle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(rectangle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel1)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -197,7 +208,9 @@ public class ToolBar extends javax.swing.JPanel {
                 .addComponent(erase)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(clear)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
@@ -216,12 +229,9 @@ public class ToolBar extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void comboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxActionPerformed
-
     private void circleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_circleActionPerformed
         frame.getInkPanel().setTool(3);
+        getLineWidth();
     }//GEN-LAST:event_circleActionPerformed
 
     private void openActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openActionPerformed
@@ -238,7 +248,7 @@ public class ToolBar extends javax.swing.JPanel {
     }//GEN-LAST:event_openActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-        
+
     }//GEN-LAST:event_saveActionPerformed
 
     private void newFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFileActionPerformed
@@ -247,14 +257,19 @@ public class ToolBar extends javax.swing.JPanel {
 
     private void pencilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pencilActionPerformed
         frame.getInkPanel().setTool(0);
+        getLineWidth();
     }//GEN-LAST:event_pencilActionPerformed
 
     private void lineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lineActionPerformed
         frame.getInkPanel().setTool(1);
+        getLineWidth();
+
     }//GEN-LAST:event_lineActionPerformed
 
     private void rectangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rectangleActionPerformed
         frame.getInkPanel().setTool(2);
+        getLineWidth();
+
     }//GEN-LAST:event_rectangleActionPerformed
 
     private void textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textActionPerformed
@@ -262,11 +277,11 @@ public class ToolBar extends javax.swing.JPanel {
     }//GEN-LAST:event_textActionPerformed
 
     private void eraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eraseActionPerformed
-        frame.getInkPanel().setTool(5);        
+        frame.getInkPanel().setTool(5);
     }//GEN-LAST:event_eraseActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-        frame.getInkPanel().setTool(6); 
+        frame.getInkPanel().setTool(6);
     }//GEN-LAST:event_clearActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -274,6 +289,7 @@ public class ToolBar extends javax.swing.JPanel {
     private javax.swing.JButton clear;
     private javax.swing.JComboBox<String> comboBox;
     private javax.swing.JButton erase;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton line;
     private javax.swing.JButton newFile;

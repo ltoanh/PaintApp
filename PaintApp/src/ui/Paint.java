@@ -35,7 +35,6 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
     private Main frame;
     private Stack<NewShape> shapes;
     private int x1, x2, y1, y2;
-    private int grouped;
     private BasicStroke stroke = new BasicStroke((float) 2);
 
  //   private boolean dragged = false;
@@ -68,7 +67,6 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
         this.shapes = new Stack<NewShape>();
 
         printPaintPanelSize(inkPanelWidth, inkPanelHeight);
-        grouped = 1;
     }
 
     public void printCoords(MouseEvent e) {
@@ -136,7 +134,7 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
         y2 = e.getY();
 //       dragged = true;
         if (activeTool == PENCIL_TOOL) {
-            shapes.push(new NewShape(x1, y1, x2, y2, primary, stroke, 1, grouped));
+            shapes.push(new NewShape(x1, y1, x2, y2, primary, stroke, 1));
             repaint();
             x1 = x2;
             y1 = y2;

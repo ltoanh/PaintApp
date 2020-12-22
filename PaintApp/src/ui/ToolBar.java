@@ -74,7 +74,6 @@ public class ToolBar extends javax.swing.JPanel {
         line = new javax.swing.JButton();
         rectangle = new javax.swing.JButton();
         circle = new javax.swing.JButton();
-        text = new javax.swing.JButton();
         erase = new javax.swing.JButton();
         clear = new javax.swing.JButton();
         comboBox = new javax.swing.JComboBox<>();
@@ -143,15 +142,6 @@ public class ToolBar extends javax.swing.JPanel {
             }
         });
 
-        text.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        text.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Type-24.png"))); // NOI18N
-        text.setText("Text");
-        text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textActionPerformed(evt);
-            }
-        });
-
         erase.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         erase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Eraser-24.png"))); // NOI18N
         erase.setText("Erase");
@@ -191,7 +181,6 @@ public class ToolBar extends javax.swing.JPanel {
                     .addComponent(pencil, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(line, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(circle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(text, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(comboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(rectangle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -216,13 +205,11 @@ public class ToolBar extends javax.swing.JPanel {
                 .addComponent(rectangle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(circle)
-                .addGap(27, 27, 27)
-                .addComponent(text)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(28, 28, 28)
                 .addComponent(erase)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(clear)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -286,22 +273,12 @@ public class ToolBar extends javax.swing.JPanel {
 
     }//GEN-LAST:event_rectangleActionPerformed
 
-    private void textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textActionPerformed
-        frame.getInkPanel().setTool(4);
-        JDialog textDialog = new TextDialog(frame, true);
-
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        textDialog.setLocation(dim.width / 2 - textDialog.getSize().width / 2, dim.height / 2 - textDialog.getSize().height / 2);
-
-        textDialog.setVisible(true);
-    }//GEN-LAST:event_textActionPerformed
-
     private void eraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eraseActionPerformed
-        frame.getInkPanel().setTool(5);
+        frame.getInkPanel().setTool(4);
     }//GEN-LAST:event_eraseActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-        frame.getInkPanel().setTool(6);
+        frame.getInkPanel().setTool(5);
     }//GEN-LAST:event_clearActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -317,7 +294,6 @@ public class ToolBar extends javax.swing.JPanel {
     private javax.swing.JButton pencil;
     private javax.swing.JButton rectangle;
     private javax.swing.JButton save;
-    private javax.swing.JButton text;
     // End of variables declaration//GEN-END:variables
 
     public void setDimensions(int width, int height) {

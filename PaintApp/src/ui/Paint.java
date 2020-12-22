@@ -46,9 +46,8 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
     private final int LINE_TOOL = 1;
     private final int RECTANGLE_TOOL = 2;
     private final int CIRCLE_TOOL = 3;
-    private final int TEXT_TOOL = 4;
-    private final int ERASE_TOOL = 5;
-    private final int CLEAR_TOOL = 6;
+    private final int ERASE_TOOL = 4;
+    private final int CLEAR_TOOL = 5;
 
     private final int LINE = 1;
 

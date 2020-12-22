@@ -17,35 +17,36 @@ public class Main extends javax.swing.JFrame {
     private CoordinateBar coordinateBar;
     private ColorChooser colorChooser;
     private Paint inkPaint;
-    
+    private JScrollPane sp;
+
     public Main() {
         initComponents();
         setLayout(new BorderLayout());
         setExtendedState(JFrame.MAXIMIZED_BOTH); //set fullscreen
-        
+
         // construct layout manager
         Content content = new Content();
         inkPaint = new Paint();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         int inkPanelWidth = dim.width - 150;
         int inkPanelHeight = dim.height - 160;
-        JScrollPane sp = new JScrollPane();
+        sp = new JScrollPane();
         sp.setLocation(10, 10);
         sp.setViewportView(inkPaint);
         sp.setSize(inkPanelWidth, inkPanelHeight);
         sp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         content.add(sp);
-        
+
         // create tool bar
         toolBar = new ToolBar();
-        
+
         // create coordianate bar
         coordinateBar = new CoordinateBar();
-        
+
         // create color chooser
         colorChooser = new ColorChooser();
-        
+
         // set components
         add(colorChooser, BorderLayout.PAGE_START);
         add(content);
@@ -121,9 +122,12 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
-
     // get component
-    public Paint getInkPanel(){
+    public Paint getInkPanel() {
         return this.inkPaint;
+    }
+
+    public JScrollPane getSP() {
+        return this.sp;
     }
 }

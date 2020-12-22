@@ -1,30 +1,27 @@
 /**
  * PaintPanel
  */
-
 package ui;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.SwingUtilities;
 
 public class Paint extends javax.swing.JPanel {
 
     /**
      * Creates new form Paint
      */
-    private Color fillColor;
-    
-    private int inkPanelWidth;
-    private int inkPanelHeight;
-    
+    private Color fillColor, currentColor;
+
     public Paint() {
         initComponents();
         setBackground(Color.WHITE);
         setLocation(10, 10);
+        currentColor = Color.BLACK;
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,6 +30,12 @@ public class Paint extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                formMouseReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -46,10 +49,14 @@ public class Paint extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
+        Color primary = currentColor;
+        Color secondary = fillColor;
+    }//GEN-LAST:event_formMouseReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
-
     void setFillColor(Color background) {
         this.fillColor = background;
     }

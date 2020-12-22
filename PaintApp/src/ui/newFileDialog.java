@@ -119,7 +119,7 @@ public class newFileDialog extends javax.swing.JDialog {
             this.dispose();
         } catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog(null,
-                "Invalid numeric entry. A proper integer is required.",
+                "Nhap sai dinh dang",
                 "New",
                 JOptionPane.ERROR_MESSAGE);
         }

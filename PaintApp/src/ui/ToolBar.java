@@ -256,7 +256,14 @@ public class ToolBar extends javax.swing.JPanel {
     }//GEN-LAST:event_openActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-
+        if (fc.showSaveDialog(frame) == JFileChooser.APPROVE_OPTION) {
+            f = new File(fc.getSelectedFile() + ".png");
+            try {
+                saveFile(f);
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+        }
     }//GEN-LAST:event_saveActionPerformed
 
     private void newFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFileActionPerformed
@@ -282,10 +289,10 @@ public class ToolBar extends javax.swing.JPanel {
     private void textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textActionPerformed
         frame.getInkPanel().setTool(4);
         JDialog textDialog = new TextDialog(frame, true);
-        
+
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         textDialog.setLocation(dim.width / 2 - textDialog.getSize().width / 2, dim.height / 2 - textDialog.getSize().height / 2);
-        
+
         textDialog.setVisible(true);
     }//GEN-LAST:event_textActionPerformed
 
@@ -333,5 +340,19 @@ public class ToolBar extends javax.swing.JPanel {
 
         newFileDialog.setVisible(true);
 
+    }
+
+    private void saveFile(File f) throws IOException {
+        BufferedImage im = makePanel(frame.getInkPanel());
+        ImageIO.write(im, "png", f);
+    }
+
+    private BufferedImage makePanel(Paint panel) {
+        int w = panel.getWidth();
+        int h = panel.getHeight();
+        BufferedImage bi = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = bi.createGraphics();
+        panel.print(g);
+        return bi;
     }
 }

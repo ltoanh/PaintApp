@@ -246,9 +246,20 @@ public class ToolBar extends javax.swing.JPanel {
     }//GEN-LAST:event_circleActionPerformed
 
     private void openActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openActionPerformed
+<<<<<<< HEAD
         if (fc.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION) {
             f = fc.getSelectedFile();
             openFile(f);
+=======
+
+        JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+
+        int returnValue = jfc.showOpenDialog(null);
+
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = jfc.getSelectedFile();
+            System.out.println(selectedFile.getAbsolutePath());
+>>>>>>> dc94f37dbf6985168b8f9b05748cec0ac3a55a99
         }
     }//GEN-LAST:event_openActionPerformed
 

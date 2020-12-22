@@ -49,6 +49,7 @@ public class TextDialog extends javax.swing.JDialog {
         example = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Text");
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("FONT"));
 

@@ -1,13 +1,17 @@
 package ui;
 
+import java.awt.BorderLayout;
 import java.awt.Graphics;
 import javafx.scene.paint.Color;
 
 public class Content extends javax.swing.JPanel {
 
+    private Paint paintPanel;
+    
     public Content() {
         initComponents();
-        
+        setLayout(null);
+
     }
 
     /**

@@ -226,11 +226,6 @@ public class ToolBar extends javax.swing.JPanel {
 
     private void openActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openActionPerformed
 
-//        if (fc.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION) {
-//            f = fc.getSelectedFile();
-//            System.out.println("Save as file: " + f.getAbsolutePath());
-//            //openFile(f);
-//        }
         JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 
         int returnValue = jfc.showOpenDialog(null);
@@ -241,19 +236,7 @@ public class ToolBar extends javax.swing.JPanel {
             System.out.println(selectedFile.getAbsolutePath());
         }
     }//GEN-LAST:event_openActionPerformed
-//    private void openFile(File f) {
-//        try {
-//            frame.getInkPaint().setImage(ImageIO.read(f));
-//        } catch (IOException ex) {
-//            Logger.getLogger(ToolBar.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        try {
-//            newDimension = new Dimension(ImageIO.read(f).getWidth(), ImageIO.read(f).getHeight());
-//        } catch (IOException ex) {
-//            System.out.println(ex);
-//        }
-//        setDimensions(newDimension.width, newDimension.height);
-//    }
+
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         
     }//GEN-LAST:event_saveActionPerformed
@@ -285,19 +268,6 @@ public class ToolBar extends javax.swing.JPanel {
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         frame.getInkPanel().setTool(6); 
     }//GEN-LAST:event_clearActionPerformed
-//private void saveFile(File file) throws IOException{
-//    BufferedImage im = makePanel(Main.getInkPaint());
-//		ImageIO.write(im, "png", file);
-//}
-//private BufferedImage makePanel(JPanel panel)
-//	{
-//	    int w = panel.getWidth();
-//	    int h = panel.getHeight();
-//	    BufferedImage bi = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
-//	    Graphics2D g = bi.createGraphics();
-//	    panel.print(g);
-//	    return bi;
-//	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton circle;

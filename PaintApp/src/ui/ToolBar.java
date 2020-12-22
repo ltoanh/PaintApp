@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -270,7 +271,6 @@ public class ToolBar extends javax.swing.JPanel {
     private void lineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lineActionPerformed
         frame.getInkPanel().setTool(1);
         getLineWidth();
-
     }//GEN-LAST:event_lineActionPerformed
 
     private void rectangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rectangleActionPerformed
@@ -281,6 +281,12 @@ public class ToolBar extends javax.swing.JPanel {
 
     private void textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textActionPerformed
         frame.getInkPanel().setTool(4);
+        JDialog textDialog = new TextDialog(frame, true);
+        
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        textDialog.setLocation(dim.width / 2 - textDialog.getSize().width / 2, dim.height / 2 - textDialog.getSize().height / 2);
+        
+        textDialog.setVisible(true);
     }//GEN-LAST:event_textActionPerformed
 
     private void eraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eraseActionPerformed
@@ -321,11 +327,11 @@ public class ToolBar extends javax.swing.JPanel {
     }
 
     private void newFile() {
-        JFrame newFileFrame = new newFileFrame(frame);
+        JDialog newFileDialog = new newFileDialog(frame, true);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        newFileFrame.setLocation(dim.width / 2 - newFileFrame.getSize().width / 2, dim.height / 2 - newFileFrame.getSize().height / 2);
+        newFileDialog.setLocation(dim.width / 2 - newFileDialog.getSize().width / 2, dim.height / 2 - newFileDialog.getSize().height / 2);
 
-        newFileFrame.setVisible(true);
+        newFileDialog.setVisible(true);
 
     }
 }

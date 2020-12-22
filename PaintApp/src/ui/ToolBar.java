@@ -206,14 +206,6 @@ public class ToolBar extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-=======
                 .addContainerGap()
                 .addComponent(jButton1)
                 .addContainerGap(33, Short.MAX_VALUE))
@@ -224,7 +216,6 @@ public class ToolBar extends javax.swing.JPanel {
                 .addContainerGap(147, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(128, 128, 128))
->>>>>>> 11e179ef327aa1de4224d06ad2863ad32306ca71
         );
     }// </editor-fold>//GEN-END:initComponents
 

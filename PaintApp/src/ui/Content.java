@@ -1,47 +1,5 @@
 package ui;
 
-<<<<<<< HEAD
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Point;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.Stack;
-import model.NewShape;
-
-public class Content extends javax.swing.JPanel {
-
-    private Point p;
-//    private Graphics2D g2;
-//    int x1, y1, x2, y2;
-//    private Stack<NewShape> shapes;
-//    private BasicStroke stroke = new BasicStroke((float) 2);
-//    private boolean transparent;
-    public Content() {
-        initComponents();
-        p = new Point();
-       // this.transparent = true;
-        jPanel1.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-                super.mouseClicked(e);
-                p = e.getPoint();
-                repaint();
-            }
-
-            @Override
-            public void mouseDragged(MouseEvent e) {
-                super.mouseDragged(e); 
-                p = e.getPoint();
-//                Color primary = Color.pink;
-//                Color fill = Color.BLACK;
-//                shapes.push(new NewShape(x1, y1, x2, y2, primary, stroke, 1, fill, transparent));
-                repaint();
-            }
-        });
-=======
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 import javafx.scene.paint.Color;
@@ -53,7 +11,6 @@ public class Content extends javax.swing.JPanel {
     public Content() {
         initComponents();
         setLayout(null);
->>>>>>> 11e179ef327aa1de4224d06ad2863ad32306ca71
 
     }
 

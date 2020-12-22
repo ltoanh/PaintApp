@@ -24,14 +24,13 @@ public class ToolBar extends javax.swing.JPanel {
 //    private Dimension newDimension;
     private File f;
     private JFileChooser fc;
-    private Dimension newDimensions = new Dimension(700, 500);
 
     public ToolBar(Main frame) {
         initComponents();
         this.frame = frame;
         // fc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         fc = new JFileChooser(new File("."));
-        fc.setFileFilter(new FileNameExtensionFilter("choose images", "jpg", "png", "jpeg", "gif"));
+        fc.setFileFilter(new FileNameExtensionFilter("Image Files", "jpg", "png"));
 
     }
 
@@ -40,16 +39,6 @@ public class ToolBar extends javax.swing.JPanel {
             String currentLine = (String) comboBox.getSelectedItem();
             frame.getInkPanel().setThickness(Float.valueOf(currentLine));
         } catch (NumberFormatException e) {
-            System.out.println(e);
-        }
-    }
-
-    private void openFile(File f) {
-        try {
-            frame.getInkPanel().setImage(ImageIO.read(f));
-            newDimensions = new Dimension(ImageIO.read(f).getWidth(), ImageIO.read(f).getHeight());
-            setDimensions(newDimensions.width, newDimensions.height);
-        } catch (IOException e) {
             System.out.println(e);
         }
     }
@@ -246,20 +235,15 @@ public class ToolBar extends javax.swing.JPanel {
     }//GEN-LAST:event_circleActionPerformed
 
     private void openActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openActionPerformed
-<<<<<<< HEAD
-        if (fc.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION) {
-            f = fc.getSelectedFile();
-            openFile(f);
-=======
 
         JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 
         int returnValue = jfc.showOpenDialog(null);
+        // int returnValue = jfc.showSaveDialog(null);
 
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = jfc.getSelectedFile();
             System.out.println(selectedFile.getAbsolutePath());
->>>>>>> dc94f37dbf6985168b8f9b05748cec0ac3a55a99
         }
     }//GEN-LAST:event_openActionPerformed
 
@@ -315,19 +299,6 @@ public class ToolBar extends javax.swing.JPanel {
     private javax.swing.JButton save;
     private javax.swing.JButton text;
     // End of variables declaration//GEN-END:variables
-
-    private void setDimensions(int width, int height) {
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        if (height > dim.height - 160 && width > dim.width - 150) {
-            frame.getSP().setSize(dim.width - 150, dim.height - 160);
-        } else if (width > dim.width - 150) {
-            frame.getSP().setSize(dim.width - 150, height);
-        } else if (height > dim.height - 160) {
-            frame.getSP().setSize(width, dim.height - 160);
-        } else {
-            frame.getSP().setSize(width, height);
-        }
-    }
 
 //    private void setDimensions(int width, int height) {
 //

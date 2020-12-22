@@ -14,10 +14,7 @@ public class Paint extends javax.swing.JPanel {
      * Creates new form Paint
      */
     private Color fillColor, currentColor;
-    
-    private int inkPanelWidth;
-    private int inkPanelHeight;
-    
+  
     public Paint() {
         initComponents();
         setBackground(Color.WHITE);

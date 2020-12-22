@@ -24,6 +24,9 @@ public class Main extends javax.swing.JFrame {
         setLayout(new BorderLayout());
         setExtendedState(JFrame.MAXIMIZED_BOTH); //set fullscreen
 
+        // create coordianate bar
+        coordinateBar = new CoordinateBar();
+        
         // construct layout manager
         Content content = new Content();
         inkPaint = new Paint(this);
@@ -40,9 +43,6 @@ public class Main extends javax.swing.JFrame {
 
         // create tool bar
         toolBar = new ToolBar(this);
-
-        // create coordianate bar
-        coordinateBar = new CoordinateBar();
 
         // create color chooser
         colorChooser = new ColorChooser();
@@ -113,6 +113,7 @@ public class Main extends javax.swing.JFrame {
         // </editor-fold>
 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main().setVisible(true);

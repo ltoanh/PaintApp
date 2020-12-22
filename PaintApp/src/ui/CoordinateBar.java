@@ -107,4 +107,8 @@ public class CoordinateBar extends javax.swing.JPanel {
     public JLabel getCoordinates() {
         return jLabel1;
     }
+
+    public JLabel getFrameSize() {
+        return jLabel2;
+    }
 }

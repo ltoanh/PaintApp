@@ -1,30 +1,41 @@
 /**
  * PaintPanel
  */
-
 package ui;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
-public class Paint extends javax.swing.JPanel {
+public class Paint extends javax.swing.JPanel implements MouseMotionListener {
 
     /**
      * Creates new form Paint
      */
-    private Color fillColor;
-    
+    private Color fillColor, currentColor;
+
     private int inkPanelWidth;
     private int inkPanelHeight;
+    private Main frame;
     
-    public Paint() {
+    public Paint(Main frame) {
         initComponents();
         setBackground(Color.WHITE);
         setLocation(10, 10);
+        currentColor = Color.BLACK;
+        addMouseMotionListener(this);
+        this.frame = frame;
     }
 
-    
+    public void printCoords(MouseEvent e) {
+        String posX = String.valueOf((int) e.getPoint().getX());
+        String posY = String.valueOf((int) e.getPoint().getY());
+        frame.getCoordinateBar().getCoordinates().setText(posX + ",  " + posY + " px");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,8 +60,18 @@ public class Paint extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
-
     void setFillColor(Color background) {
         this.fillColor = background;
     }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        System.out.println("drag");
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        printCoords(e);
+    }
+
 }

@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JLabel;
 
 public class CoordinateBar extends javax.swing.JPanel {
 
@@ -102,4 +103,8 @@ public class CoordinateBar extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getCoordinates() {
+        return jLabel1;
+    }
 }

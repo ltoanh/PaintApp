@@ -26,7 +26,7 @@ public class Main extends javax.swing.JFrame {
 
         // construct layout manager
         Content content = new Content();
-        inkPaint = new Paint();
+        inkPaint = new Paint(this);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         int inkPanelWidth = dim.width - 150;
         int inkPanelHeight = dim.height - 160;
@@ -129,5 +129,9 @@ public class Main extends javax.swing.JFrame {
 
     public JScrollPane getSP() {
         return this.sp;
+    }
+
+    public CoordinateBar getCoordinateBar() {
+        return this.coordinateBar;
     }
 }

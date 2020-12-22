@@ -14,10 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
 
-/**
- *
- * @author whiwf
- */
 public class ToolBar extends javax.swing.JPanel {
 
     /**

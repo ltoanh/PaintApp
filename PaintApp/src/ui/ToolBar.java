@@ -21,17 +21,17 @@ public class ToolBar extends javax.swing.JPanel {
      */
     private Graphics2D graphics2D;
     private Main frame;
-    private Dimension newDimension;
+//    private Dimension newDimension;
     private File f;
     private JFileChooser fc;
-    TextDialog td;
+
     public ToolBar(Main frame) {
         initComponents();
         this.frame = frame;
         // fc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         fc = new JFileChooser(new File("."));
         fc.setFileFilter(new FileNameExtensionFilter("Image Files", "jpg", "png"));
-       
+
     }
 
     /**
@@ -122,14 +122,29 @@ public class ToolBar extends javax.swing.JPanel {
         text.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         text.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Type-24.png"))); // NOI18N
         text.setText("Text");
+        text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textActionPerformed(evt);
+            }
+        });
 
         erase.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         erase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Eraser-24.png"))); // NOI18N
         erase.setText("Erase");
+        erase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eraseActionPerformed(evt);
+            }
+        });
 
         clear.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Trash-24.png"))); // NOI18N
         clear.setText("Clear");
+        clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearActionPerformed(evt);
+            }
+        });
 
         comboBox.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Line Width", "1", "2", "3", "4", "5", "6", "7", "8", " " }));
@@ -206,8 +221,7 @@ public class ToolBar extends javax.swing.JPanel {
     }//GEN-LAST:event_comboBoxActionPerformed
 
     private void circleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_circleActionPerformed
-        // TODO add your handling code here:
-
+        frame.getInkPanel().setTool(3);
     }//GEN-LAST:event_circleActionPerformed
 
     private void openActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openActionPerformed
@@ -241,28 +255,36 @@ public class ToolBar extends javax.swing.JPanel {
 //        setDimensions(newDimension.width, newDimension.height);
 //    }
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-
-
+        
     }//GEN-LAST:event_saveActionPerformed
 
     private void newFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFileActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_newFileActionPerformed
 
     private void pencilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pencilActionPerformed
-        // TODO add your handling code here:
         frame.getInkPanel().setTool(0);
     }//GEN-LAST:event_pencilActionPerformed
 
     private void lineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lineActionPerformed
-        // TODO add your handling code here:
         frame.getInkPanel().setTool(1);
     }//GEN-LAST:event_lineActionPerformed
 
     private void rectangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rectangleActionPerformed
-        // TODO add your handling code here:
         frame.getInkPanel().setTool(2);
     }//GEN-LAST:event_rectangleActionPerformed
+
+    private void textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textActionPerformed
+        frame.getInkPanel().setTool(4);
+    }//GEN-LAST:event_textActionPerformed
+
+    private void eraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eraseActionPerformed
+        frame.getInkPanel().setTool(5);        
+    }//GEN-LAST:event_eraseActionPerformed
+
+    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
+        frame.getInkPanel().setTool(6); 
+    }//GEN-LAST:event_clearActionPerformed
 //private void saveFile(File file) throws IOException{
 //    BufferedImage im = makePanel(Main.getInkPaint());
 //		ImageIO.write(im, "png", file);

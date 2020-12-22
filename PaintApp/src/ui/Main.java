@@ -49,9 +49,9 @@ public class Main extends javax.swing.JFrame {
 
         // set components
         add(colorChooser, BorderLayout.PAGE_START);
+        add(content);
         add(coordinateBar, BorderLayout.PAGE_END);
         add(toolBar, BorderLayout.WEST);
-        add(content);
 
     }
 

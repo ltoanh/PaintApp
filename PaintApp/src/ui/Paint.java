@@ -114,9 +114,9 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
             canvas = new BufferedImage(inkPanelWidth, inkPanelHeight, BufferedImage.TYPE_INT_ARGB);
             graphics2D = canvas.createGraphics();
             graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            clear();
+//            clear();
         }
-        g.drawImage(canvas, 0, 0, null);
+        super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         for (NewShape s : shapes) {
@@ -193,32 +193,5 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
     void setThickness(float f) {
         stroke = new BasicStroke(f);
         graphics2D.setStroke(stroke);
-    }
-
-    public void setImage(BufferedImage image) {
-        graphics2D.dispose();
-        this.setInkPanel(image.getWidth(), image.getHeight());
-        canvas = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
-        graphics2D = canvas.createGraphics();
-        graphics2D.drawImage(image, 0, 0, null);
-        graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-    }
-
-    public void setInkPanel(int width, int height) {
-        canvas = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        graphics2D = canvas.createGraphics();
-        graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        this.printPaintPanelSize(width, height);
-        this.setSize(width - 3, height - 3);
-        this.setPreferredSize(new Dimension(width - 3, height - 3));
-        clear();
-    }
-
-    public void clear() {
-        graphics2D.setPaint(Color.white);
-        graphics2D.fillRect(0, 0, getSize().width, getSize().height);
-        shapes.removeAllElements();
-        repaint();
-        graphics2D.setColor(currentColor);
     }
 }

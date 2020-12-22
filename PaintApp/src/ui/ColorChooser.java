@@ -16,7 +16,7 @@ public class ColorChooser extends javax.swing.JPanel {
      */
     private final String PRIMARY_COLOR = "Primary Color";
     private final String SECONDARY_COLOR = "Secondary Color";
-    
+
     public ColorChooser() {
         initComponents();
     }
@@ -372,305 +372,305 @@ public class ColorChooser extends javax.swing.JPanel {
 
     private void SecondaryColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecondaryColorActionPerformed
 //        // TODO add your handling code here:
-         SecondaryColor.setBackground(PrimaryColor.getBackground());
+        SecondaryColor.setBackground(PrimaryColor.getBackground());
 //				frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_SecondaryColorActionPerformed
 
     private void fillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fillActionPerformed
         // TODO add your handling code here:
-	//frame.getInkPanel().setTransparency(!fill.isSelected());
+        //frame.getInkPanel().setTransparency(!fill.isSelected());
     }//GEN-LAST:event_fillActionPerformed
 
     private void newColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newColorActionPerformed
-       
-       Color initialcolor = Color.RED;
-       Color color = JColorChooser.showDialog(this, "Select a color", initialcolor);
-				if (option.getSelectedItem() == "Primary Color") {
-                                    custom3.setBackground(custom2.getBackground());
-                                    custom2.setBackground(PrimaryColor.getBackground());
-                                    PrimaryColor.setBackground(color);
-				} else {
-					custom3.setBackground(custom2.getBackground());
-						custom2.setBackground(SecondaryColor.getBackground());
-						SecondaryColor.setBackground(color);
-				}
+
+        Color initialcolor = Color.RED;
+        Color color = JColorChooser.showDialog(this, "Select a color", initialcolor);
+        if (option.getSelectedItem() == "Primary Color") {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(color);
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(color);
+        }
     }//GEN-LAST:event_newColorActionPerformed
 
     private void custom2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custom2ActionPerformed
         // TODO add your handling code here:
         Color switchs = custom3.getBackground();
-				if (option.getSelectedItem() ==PRIMARY_COLOR ){
-					
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(switchs);
-				}else{
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(switchs);
-				}
-        
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(switchs);
+        } else {
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(switchs);
+        }
+
     }//GEN-LAST:event_custom2ActionPerformed
 
     private void custom3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custom3ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() == PRIMARY_COLOR){
-					Color oldCustom1 = PrimaryColor.getBackground();
-					PrimaryColor.setBackground(custom3.getBackground());
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(oldCustom1);
-				}else {
-					Color oldCustom1 = SecondaryColor.getBackground();
-					SecondaryColor.setBackground(custom3.getBackground());
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(oldCustom1);
-				}
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            Color oldCustom1 = PrimaryColor.getBackground();
+            PrimaryColor.setBackground(custom3.getBackground());
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(oldCustom1);
+        } else {
+            Color oldCustom1 = SecondaryColor.getBackground();
+            SecondaryColor.setBackground(custom3.getBackground());
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(oldCustom1);
+        }
     }//GEN-LAST:event_custom3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton5.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton5.getBackground());
+
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton5.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton5.getBackground());
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-       
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton6.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton6.getBackground());
+
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton6.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton6.getBackground());
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton7.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton7.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton7.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton7.getBackground());
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton8.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton8.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton8.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton8.getBackground());
         }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton9.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton9.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton9.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton9.getBackground());
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton10.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton10.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton10.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton10.getBackground());
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton12.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton12.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton12.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton12.getBackground());
         }
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton11.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton11.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton11.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton11.getBackground());
         }
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton13.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton13.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton13.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton13.getBackground());
         }
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton14.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton14.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton14.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton14.getBackground());
         }
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton15.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton15.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton15.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton15.getBackground());
         }
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton16.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton16.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton16.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton16.getBackground());
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton17.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton17.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton17.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton17.getBackground());
         }
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton18.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton18.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton18.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton18.getBackground());
         }
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton19.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton19.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton19.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton19.getBackground());
         }
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton20.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton20.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton20.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton20.getBackground());
         }
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton25.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton25.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton25.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton25.getBackground());
         }
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton26.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton26.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton26.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton26.getBackground());
         }
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
         // TODO add your handling code here:
-        if (option.getSelectedItem() ==PRIMARY_COLOR) {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(PrimaryColor.getBackground());
-					PrimaryColor.setBackground(jButton27.getBackground());
-				} else {
-					custom3.setBackground(custom2.getBackground());
-					custom2.setBackground(SecondaryColor.getBackground());
-					SecondaryColor.setBackground(jButton27.getBackground());
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton27.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton27.getBackground());
         }
     }//GEN-LAST:event_jButton27ActionPerformed
 

@@ -1,5 +1,6 @@
 package ui;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Toolkit;
@@ -10,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
@@ -257,7 +259,7 @@ public class ToolBar extends javax.swing.JPanel {
     }//GEN-LAST:event_saveActionPerformed
 
     private void newFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFileActionPerformed
-
+        newFile();
     }//GEN-LAST:event_newFileActionPerformed
 
     private void pencilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pencilActionPerformed
@@ -305,7 +307,7 @@ public class ToolBar extends javax.swing.JPanel {
     private javax.swing.JButton text;
     // End of variables declaration//GEN-END:variables
 
-    private void setDimensions(int width, int height) {
+    public void setDimensions(int width, int height) {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         if (height > dim.height - 160 && width > dim.width - 150) {
             frame.getSP().setSize(dim.width - 150, dim.height - 160);
@@ -318,17 +320,12 @@ public class ToolBar extends javax.swing.JPanel {
         }
     }
 
-//    private void setDimensions(int width, int height) {
-//
-//        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-//        if (height > dim.height - 160 && width > dim.width - 150) {
-//            frame.getSP().setSize(dim.width - 150, dim.height - 160);
-//        } else if (width > dim.width - 150) {
-//            frame.getSP().setSize(dim.width - 150, height);
-//        } else if (height > dim.height - 160) {
-//            frame.getSP().setSize(width, dim.height - 160);
-//        } else {
-//            frame.getSP().setSize(width, height);
-//        }
-//    }
+    private void newFile() {
+        JFrame newFileFrame = new newFileFrame(frame);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        newFileFrame.setLocation(dim.width / 2 - newFileFrame.getSize().width / 2, dim.height / 2 - newFileFrame.getSize().height / 2);
+
+        newFileFrame.setVisible(true);
+
+    }
 }

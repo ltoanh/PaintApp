@@ -135,4 +135,8 @@ public class Main extends javax.swing.JFrame {
     public CoordinateBar getCoordinateBar() {
         return this.coordinateBar;
     }
+    
+    public ToolBar getToolBar(){
+        return this.toolBar;
+    }
 }

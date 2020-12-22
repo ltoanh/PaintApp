@@ -5,23 +5,38 @@ package ui;
 
 import java.awt.Color;
 import java.awt.Dimension;
+<<<<<<< HEAD
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
+=======
+import java.awt.Toolkit;
+>>>>>>> 11e179ef327aa1de4224d06ad2863ad32306ca71
 
 public class Paint extends javax.swing.JPanel {
 
     /**
      * Creates new form Paint
      */
+<<<<<<< HEAD
     private Graphics2D graphics2D;
     private BufferedImage canvas;
     private Main frame;
 
+=======
+    private Color fillColor;
+    
+    private int inkPanelWidth;
+    private int inkPanelHeight;
+    
+>>>>>>> 11e179ef327aa1de4224d06ad2863ad32306ca71
     public Paint() {
         initComponents();
+        setBackground(Color.WHITE);
+        setLocation(10, 10);
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,6 +46,7 @@ public class Paint extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
         jPanel1 = new javax.swing.JPanel();
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
@@ -46,20 +62,31 @@ public class Paint extends javax.swing.JPanel {
             .addGap(0, 298, Short.MAX_VALUE)
         );
 
+=======
+>>>>>>> 11e179ef327aa1de4224d06ad2863ad32306ca71
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+>>>>>>> 11e179ef327aa1de4224d06ad2863ad32306ca71
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
@@ -87,4 +114,11 @@ public class Paint extends javax.swing.JPanel {
         frame.getCoordinateBar().getFrameSize().setText(width + ",  " + height + " px");
     }
 
+=======
+    // End of variables declaration//GEN-END:variables
+
+    void setFillColor(Color background) {
+        this.fillColor = background;
+    }
+>>>>>>> 11e179ef327aa1de4224d06ad2863ad32306ca71
 }

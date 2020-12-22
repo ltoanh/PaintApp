@@ -1,10 +1,24 @@
+/**
+ * ColorChooser + ColorDialog
+ * ColorDialog: dung jcolorchooser
+ */
 package ui;
+
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JColorChooser;
+import javax.swing.JRadioButton;
 
 public class ColorChooser extends javax.swing.JPanel {
 
     /**
      * Creates new form NewJPanel
      */
+    private final String PRIMARY_COLOR = "Primary Color";
+    private final String SECONDARY_COLOR = "Secondary Color";
+    
+    private Main frame;
+    
     public ColorChooser() {
         initComponents();
     }
@@ -52,42 +66,132 @@ public class ColorChooser extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
         jButton5.setBackground(new java.awt.Color(255, 255, 51));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setBackground(new java.awt.Color(51, 0, 0));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setBackground(new java.awt.Color(204, 0, 204));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setBackground(new java.awt.Color(255, 102, 102));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setBackground(new java.awt.Color(204, 255, 255));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setBackground(new java.awt.Color(153, 255, 153));
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setBackground(new java.awt.Color(51, 51, 0));
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setBackground(new java.awt.Color(102, 0, 255));
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jButton13.setBackground(new java.awt.Color(0, 102, 51));
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton14.setBackground(new java.awt.Color(0, 102, 102));
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         jButton15.setBackground(new java.awt.Color(153, 102, 0));
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         jButton16.setBackground(new java.awt.Color(204, 0, 102));
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         jButton17.setBackground(new java.awt.Color(255, 153, 204));
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
 
         jButton18.setBackground(new java.awt.Color(255, 204, 0));
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
 
         jButton19.setBackground(new java.awt.Color(204, 204, 204));
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
 
         jButton20.setBackground(new java.awt.Color(204, 102, 0));
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Most Recent");
 
         custom2.setBackground(new java.awt.Color(255, 255, 255));
+        custom2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                custom2ActionPerformed(evt);
+            }
+        });
 
         custom3.setBackground(new java.awt.Color(255, 255, 255));
+        custom3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                custom3ActionPerformed(evt);
+            }
+        });
 
         PrimaryColor.setBackground(new java.awt.Color(0, 0, 0));
         PrimaryColor.addActionListener(new java.awt.event.ActionListener() {
@@ -117,10 +221,25 @@ public class ColorChooser extends javax.swing.JPanel {
         });
 
         jButton25.setBackground(new java.awt.Color(255, 0, 0));
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
 
         jButton26.setBackground(new java.awt.Color(102, 102, 0));
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
 
         jButton27.setBackground(new java.awt.Color(0, 0, 255));
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
 
         newColor.setText("Edit Color");
         newColor.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +255,7 @@ public class ColorChooser extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,9 +267,9 @@ public class ColorChooser extends javax.swing.JPanel {
                 .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,21 +285,21 @@ public class ColorChooser extends javax.swing.JPanel {
                 .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(custom2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(custom3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(newColor, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,9 +362,7 @@ public class ColorChooser extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -253,16 +371,308 @@ public class ColorChooser extends javax.swing.JPanel {
     }//GEN-LAST:event_PrimaryColorActionPerformed
 
     private void SecondaryColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecondaryColorActionPerformed
-        // TODO add your handling code here:
+//        // TODO add your handling code here:
+        SecondaryColor.setBackground(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_SecondaryColorActionPerformed
 
     private void fillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fillActionPerformed
         // TODO add your handling code here:
+        //frame.getInkPanel().setTransparency(!fill.isSelected());
     }//GEN-LAST:event_fillActionPerformed
 
     private void newColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newColorActionPerformed
-        // TODO add your handling code here:
+
+        Color initialcolor = Color.RED;
+        Color color = JColorChooser.showDialog(this, "Select a color", initialcolor);
+        if (option.getSelectedItem() == "Primary Color") {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(color);
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(color);
+        }
     }//GEN-LAST:event_newColorActionPerformed
+
+    private void custom2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custom2ActionPerformed
+        // TODO add your handling code here:
+        Color switchs = custom3.getBackground();
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(switchs);
+        } else {
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(switchs);
+        }
+
+    }//GEN-LAST:event_custom2ActionPerformed
+
+    private void custom3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custom3ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            Color oldCustom1 = PrimaryColor.getBackground();
+            PrimaryColor.setBackground(custom3.getBackground());
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(oldCustom1);
+        } else {
+            Color oldCustom1 = SecondaryColor.getBackground();
+            SecondaryColor.setBackground(custom3.getBackground());
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(oldCustom1);
+        }
+    }//GEN-LAST:event_custom3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton5.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton5.getBackground());
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton6.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton6.getBackground());
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton7.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton7.getBackground());
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton8.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton8.getBackground());
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton9.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton9.getBackground());
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton10.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton10.getBackground());
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton12.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton12.getBackground());
+        }
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton11.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton11.getBackground());
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton13.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton13.getBackground());
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton14.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton14.getBackground());
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton15.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton15.getBackground());
+        }
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton16.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton16.getBackground());
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton17.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton17.getBackground());
+        }
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton18.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton18.getBackground());
+        }
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton19.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton19.getBackground());
+        }
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton20.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton20.getBackground());
+        }
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton25.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton25.getBackground());
+        }
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton26.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton26.getBackground());
+        }
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+        // TODO add your handling code here:
+        if (option.getSelectedItem() == PRIMARY_COLOR) {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(PrimaryColor.getBackground());
+            PrimaryColor.setBackground(jButton27.getBackground());
+        } else {
+            custom3.setBackground(custom2.getBackground());
+            custom2.setBackground(SecondaryColor.getBackground());
+            SecondaryColor.setBackground(jButton27.getBackground());
+        }
+    }//GEN-LAST:event_jButton27ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

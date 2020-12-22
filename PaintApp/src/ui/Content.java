@@ -1,5 +1,6 @@
 package ui;
 
+<<<<<<< HEAD
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -40,6 +41,19 @@ public class Content extends javax.swing.JPanel {
                 repaint();
             }
         });
+=======
+import java.awt.BorderLayout;
+import java.awt.Graphics;
+import javafx.scene.paint.Color;
+
+public class Content extends javax.swing.JPanel {
+
+    private Paint paintPanel;
+    
+    public Content() {
+        initComponents();
+        setLayout(null);
+>>>>>>> 11e179ef327aa1de4224d06ad2863ad32306ca71
 
     }
 

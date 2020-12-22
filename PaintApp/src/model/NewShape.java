@@ -21,7 +21,7 @@ public class NewShape {
     private int shape;
     private Font font;
 
-    public int group = 0;
+
 
     public NewShape(int x1, int y1, int x2, int y2, Color color, BasicStroke stroke, int shape, Color fill,
             boolean transparent) {
@@ -32,7 +32,7 @@ public class NewShape {
         this.color = color;
         this.stroke = stroke;
         this.shape = shape;
-        this.group = 0;
+       
         this.fillColor = fill;
         this.transparent = transparent;
     }
@@ -46,11 +46,10 @@ public class NewShape {
         this.color = color;
         this.stroke = stroke;
         this.shape = shape;
-        this.group = 0;
         this.message = message;
     }
 
-    public NewShape(int x1, int y1, int x2, int y2, Color color, BasicStroke stroke, int shape, int group) {
+    public NewShape(int x1, int y1, int x2, int y2, Color color, BasicStroke stroke, int shape) {
         this.x1 = x1;
         this.x2 = x2;
         this.y1 = y1;
@@ -58,7 +57,6 @@ public class NewShape {
         this.color = color;
         this.stroke = stroke;
         this.shape = shape;
-        this.group = group;
 
     }
 
@@ -106,7 +104,5 @@ public class NewShape {
         return this.transparent;
     }
 
-    public int getGroup() {
-        return this.group;
-    }
+    
 }

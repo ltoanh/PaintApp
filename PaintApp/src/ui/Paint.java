@@ -38,13 +38,23 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
     private int grouped;
     private BasicStroke stroke = new BasicStroke((float) 2);
 
- //   private boolean dragged = false;
-
+    //   private boolean dragged = false;
     private int activeTool = 9;
-    
+
     private final int PENCIL_TOOL = 0;
-    
+    private final int LINE_TOOL = 1;
+    private final int RECTANGLE_TOOL = 2;
+    private final int CIRCLE_TOOL = 3;
+    //private final int SELECT_TOOL = 4;
+    private final int TEXT_TOOL = 5;
+    private final int ERASER_TOOL = 6;
+    private final int FILL_TOOL = 7;
+
     private final int LINE = 1;
+    private final int RECTANGLE = 2;
+    private final int CIRCLE = 3;
+    private final int TRIANGLE = 4;
+    private final int TEXT = 5;
 
     public Paint(Main frame) {
         initComponents();
@@ -130,7 +140,7 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
         y2 = e.getY();
 //       dragged = true;
         if (activeTool == PENCIL_TOOL) {
-            shapes.push(new NewShape(x1, y1, x2, y2, primary, stroke, 1, grouped));
+            shapes.push(new NewShape(x1, y1, x2, y2, primary, stroke, 1));
             repaint();
             x1 = x2;
             y1 = y2;
@@ -151,7 +161,7 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
 
     @Override
     public void mousePressed(MouseEvent e) {
-        
+
     }
 
     @Override

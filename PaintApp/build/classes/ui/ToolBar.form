@@ -192,6 +192,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Text"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="erase">
           <Properties>
@@ -203,6 +206,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Erase"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eraseActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="clear">
           <Properties>
@@ -214,6 +220,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Clear"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="comboBox">
           <Properties>

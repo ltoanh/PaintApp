@@ -16,7 +16,9 @@ public class ColorChooser extends javax.swing.JPanel {
      */
     private final String PRIMARY_COLOR = "Primary Color";
     private final String SECONDARY_COLOR = "Secondary Color";
-
+    
+    private Main frame;
+    
     public ColorChooser() {
         initComponents();
     }
@@ -360,9 +362,7 @@ public class ColorChooser extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -373,7 +373,7 @@ public class ColorChooser extends javax.swing.JPanel {
     private void SecondaryColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecondaryColorActionPerformed
 //        // TODO add your handling code here:
         SecondaryColor.setBackground(PrimaryColor.getBackground());
-//				frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_SecondaryColorActionPerformed
 
     private void fillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fillActionPerformed

@@ -374,12 +374,12 @@ public class ColorChooser extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PrimaryColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrimaryColorActionPerformed
-        // TODO add your handling code here:
+        
         frame.getInkPanel().setColor(PrimaryColor.getBackground());
     }//GEN-LAST:event_PrimaryColorActionPerformed
 
     private void SecondaryColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecondaryColorActionPerformed
-//        // TODO add your handling code here:
+
         if(fill.isSelected()){
             SecondaryColor.setBackground(PrimaryColor.getBackground());
             frame.getInkPanel().setFillColor(SecondaryColor.getBackground());

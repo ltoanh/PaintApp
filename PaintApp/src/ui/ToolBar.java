@@ -162,6 +162,7 @@ public class ToolBar extends javax.swing.JPanel {
 
         comboBox.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", " " }));
+        comboBox.setToolTipText("");
         comboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxActionPerformed(evt);

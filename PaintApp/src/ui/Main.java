@@ -45,7 +45,7 @@ public class Main extends javax.swing.JFrame {
         toolBar = new ToolBar(this);
 
         // create color chooser
-        colorChooser = new ColorChooser();
+        colorChooser = new ColorChooser(this);
 
         // set components
         add(colorChooser, BorderLayout.PAGE_START);

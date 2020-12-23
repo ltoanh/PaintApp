@@ -18,9 +18,11 @@ public class ColorChooser extends javax.swing.JPanel {
     private final String SECONDARY_COLOR = "Secondary Color";
     
     private Main frame;
+    Color currentColor;
     
-    public ColorChooser() {
+    public ColorChooser(Main frame) {
         initComponents();
+        this.frame = frame;
     }
 
     /**
@@ -394,6 +396,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(color);
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_newColorActionPerformed
 
     private void custom2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custom2ActionPerformed
@@ -407,7 +411,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(switchs);
         }
-
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_custom2ActionPerformed
 
     private void custom3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custom3ActionPerformed
@@ -423,6 +428,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom3.setBackground(custom2.getBackground());
             custom2.setBackground(oldCustom1);
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_custom3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -437,6 +444,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton5.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -451,6 +460,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton6.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -464,6 +475,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton7.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -477,6 +490,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton8.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -490,6 +505,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton9.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -503,6 +520,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton10.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -516,6 +535,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton12.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -529,6 +550,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton11.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -542,6 +565,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton13.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -555,6 +580,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton14.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
@@ -568,6 +595,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton15.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
@@ -581,6 +610,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton16.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
@@ -594,6 +625,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton17.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
@@ -607,6 +640,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton18.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
@@ -620,6 +655,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton19.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
@@ -633,6 +670,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton20.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
@@ -646,6 +685,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton25.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
@@ -659,6 +700,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton26.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
@@ -672,6 +715,8 @@ public class ColorChooser extends javax.swing.JPanel {
             custom2.setBackground(SecondaryColor.getBackground());
             SecondaryColor.setBackground(jButton27.getBackground());
         }
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
+        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton27ActionPerformed
 
 

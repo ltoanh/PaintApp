@@ -46,8 +46,8 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
     private final int LINE_TOOL = 1;
     private final int RECTANGLE_TOOL = 2;
     private final int CIRCLE_TOOL = 3;
-    private final int ERASE_TOOL = 5;
-    private final int CLEAR_TOOL = 6;
+    private final int ERASE_TOOL = 4;
+    private final int CLEAR_TOOL = 5;
 
     private final int LINE = 1;
     private final int RECTANGLE = 2;
@@ -58,7 +58,7 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
         setBackground(Color.WHITE);
         setLocation(10, 10);
         currentColor = Color.BLACK;
-        //this.fillColor = Color.white;
+        this.fillColor = Color.white;
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         inkPanelWidth = dim.width - 150;
         inkPanelHeight = dim.height - 160;
@@ -68,7 +68,7 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
         this.frame = frame;
         this.shapes = new Stack<NewShape>();
         this.preview = new Stack<NewShape>();
-        
+
         printPaintPanelSize(inkPanelWidth, inkPanelHeight);
     }
 
@@ -110,7 +110,7 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
-                Color primary = currentColor;
+        Color primary = currentColor;
         Color secondary = fillColor;
         if (SwingUtilities.isRightMouseButton(evt)) {
             primary = secondary;
@@ -172,29 +172,27 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
         Graphics2D g2 = (Graphics2D) g;
 
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        for(NewShape s : shapes){
+        for (NewShape s : shapes) {
 
             g2.setColor(s.getColor());
             g2.setStroke(s.getStroke());
 
-            if (s.getShape() == LINE){
+            if (s.getShape() == LINE) {
                 g2.drawLine(s.getx1(), s.gety1(), s.getx2(), s.gety2());
-            }
-            else if (s.getShape() == RECTANGLE){
+            } else if (s.getShape() == RECTANGLE) {
 
                 g2.drawRect(s.getx1(), s.gety1(), s.getx2(), s.gety2());
-                if(s.transparent == false){
+                if (s.transparent == false) {
                     g2.setColor(s.getfillColor());
                     g2.fillRect(s.getx1(), s.gety1(), s.getx2(), s.gety2());
                 }
-            }
-            else if (s.getShape() == CIRCLE){
+            } else if (s.getShape() == CIRCLE) {
                 g2.drawOval(s.getx1(), s.gety1(), s.getx2(), s.gety2());
-                if(s.transparent == false){
+                if (s.transparent == false) {
                     g2.setColor(s.getfillColor());
                     g2.fillOval(s.getx1(), s.gety1(), s.getx2(), s.gety2());
                 }
-                    
+
             }
         }
         if (preview.size() > 0) {
@@ -234,56 +232,47 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
         x2 = e.getX();
         y2 = e.getY();
         dragged = true;
-        if (activeTool == ERASE_TOOL){
-            shapes.push(new NewShape(x1, y1, x2, y2,Color.white,stroke,1));
+        if (activeTool == ERASE_TOOL) {
+            shapes.push(new NewShape(x1, y1, x2, y2, Color.white, stroke, 1));
             repaint();
             x1 = x2;
             y1 = y2;
         }
         if (activeTool == PENCIL_TOOL) {
-            shapes.push(new NewShape(x1, y1, x2, y2,primary,stroke,1));
+            shapes.push(new NewShape(x1, y1, x2, y2, primary, stroke, 1));
             repaint();
             x1 = x2;
             y1 = y2;
-        }
-        else if (activeTool == LINE_TOOL){
-            preview.push(new NewShape(x1, y1, x2, y2,primary,stroke,1,secondary,transparent));
+        } else if (activeTool == LINE_TOOL) {
+            preview.push(new NewShape(x1, y1, x2, y2, primary, stroke, 1, secondary, transparent));
             repaint();
-        }
-        else if (activeTool == RECTANGLE_TOOL){
+        } else if (activeTool == RECTANGLE_TOOL) {
             if (x1 < x2 && y1 < y2) {
-                preview.push(new NewShape(x1, y1, x2 - x1, y2 - y1,primary,stroke,2,secondary,transparent));
+                preview.push(new NewShape(x1, y1, x2 - x1, y2 - y1, primary, stroke, 2, secondary, transparent));
                 //graphics2D.draw(new Rectangle2D.Double(x1, y1, x2 - x1, y2 - y1));
-            }
-            else if (x2 < x1 && y1 < y2) {
-                preview.push(new NewShape(x2, y1, x1 - x2, y2 - y1,primary,stroke,2,secondary,transparent));
+            } else if (x2 < x1 && y1 < y2) {
+                preview.push(new NewShape(x2, y1, x1 - x2, y2 - y1, primary, stroke, 2, secondary, transparent));
                 //graphics2D.draw(new Rectangle2D.Double(x2, y1, x1 - x2, y2 - y1));
-            }
-            else if (x1 < x2 && y2 < y1) {
-                preview.push(new NewShape(x1, y2, x2 - x1, y1 - y2,primary,stroke,2,secondary,transparent));
+            } else if (x1 < x2 && y2 < y1) {
+                preview.push(new NewShape(x1, y2, x2 - x1, y1 - y2, primary, stroke, 2, secondary, transparent));
                 //graphics2D.draw(new Rectangle2D.Double(x1, y2, x2 - x1, y1 - y2));
-            }
-            else if (x2 < x1 && y2 < y1) {
-                preview.push(new NewShape(x2, y2, x1 - x2, y1 - y2,primary,stroke,2,secondary,transparent));
+            } else if (x2 < x1 && y2 < y1) {
+                preview.push(new NewShape(x2, y2, x1 - x2, y1 - y2, primary, stroke, 2, secondary, transparent));
                 //graphics2D.draw(new Rectangle2D.Double(x2, y2, x1 - x2, y1 - y2));
             }
             repaint();
-        }
-        else if (activeTool == CIRCLE_TOOL) {
+        } else if (activeTool == CIRCLE_TOOL) {
             if (x1 < x2 && y1 < y2) {
-                preview.push(new NewShape(x1, y1, x2 - x1, y2 - y1,primary,stroke,3,secondary,transparent));
+                preview.push(new NewShape(x1, y1, x2 - x1, y2 - y1, primary, stroke, 3, secondary, transparent));
                 //graphics2D.draw(new Ellipse2D.Double(x1, y1, x2 - x1, y2 - y1));
-            }
-            else if (x2 < x1 && y1 < y2) {
-                preview.push(new NewShape(x2, y1, x1 - x2, y2 - y1,primary,stroke,3,secondary,transparent));
+            } else if (x2 < x1 && y1 < y2) {
+                preview.push(new NewShape(x2, y1, x1 - x2, y2 - y1, primary, stroke, 3, secondary, transparent));
                 //graphics2D.draw(new Ellipse2D.Double(x2, y1, x1 - x2, y2 - y1));
-            }
-            else if (x1 < x2 && y2 < y1) {
-                preview.push(new NewShape(x1, y2, x2 - x1, y1 - y2,primary,stroke,3,secondary,transparent));
+            } else if (x1 < x2 && y2 < y1) {
+                preview.push(new NewShape(x1, y2, x2 - x1, y1 - y2, primary, stroke, 3, secondary, transparent));
                 //graphics2D.draw(new Ellipse2D.Double(x1, y2, x2 - x1, y1 - y2));
-            }
-            else if (x2 < x1 && y2 < y1) {
-                preview.push(new NewShape(x2, y2, x1 - x2, y1 - y2,primary,stroke,3,secondary,transparent));
+            } else if (x2 < x1 && y2 < y1) {
+                preview.push(new NewShape(x2, y2, x1 - x2, y1 - y2, primary, stroke, 3, secondary, transparent));
                 //graphics2D.draw(new Ellipse2D.Double(x2, y2, x1 - x2, y1 - y2));
             }
             repaint();
@@ -304,12 +293,12 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
 
     @Override
     public void mousePressed(MouseEvent e) {
-        System.out.println("press");
+        //System.out.println("press");
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        
+
     }
 
     @Override

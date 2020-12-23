@@ -279,6 +279,7 @@ public class ToolBar extends javax.swing.JPanel {
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         frame.getInkPanel().setTool(5);
+        frame.getInkPanel().clear();
     }//GEN-LAST:event_clearActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

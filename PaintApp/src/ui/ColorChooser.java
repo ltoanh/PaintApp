@@ -384,11 +384,14 @@ public class ColorChooser extends javax.swing.JPanel {
             SecondaryColor.setBackground(PrimaryColor.getBackground());
             frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
         }
+        else{
+            frame.getInkPanel().setTransparency(!fill.isSelected());
+        }
     }//GEN-LAST:event_SecondaryColorActionPerformed
 
     private void fillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fillActionPerformed
         // TODO add your handling code here:
-        //frame.getInkPanel().setTransparency(!fill.isSelected());
+        frame.getInkPanel().setTransparency(!fill.isSelected());
     }//GEN-LAST:event_fillActionPerformed
 
     private void newColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newColorActionPerformed
@@ -729,6 +732,13 @@ public class ColorChooser extends javax.swing.JPanel {
 
     private void optionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionActionPerformed
         // TODO add your handling code here:
+        if(fill.isSelected()){
+            SecondaryColor.setBackground(PrimaryColor.getBackground());
+            frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
+        }
+        else{
+            frame.getInkPanel().setTransparency(!fill.isSelected());
+        }
     }//GEN-LAST:event_optionActionPerformed
 
 

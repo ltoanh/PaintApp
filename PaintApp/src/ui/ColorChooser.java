@@ -213,6 +213,11 @@ public class ColorChooser extends javax.swing.JPanel {
 
         option.setBackground(new java.awt.Color(0, 255, 51));
         option.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Primary Color", "Secondary Color" }));
+        option.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionActionPerformed(evt);
+            }
+        });
 
         fill.setBackground(new java.awt.Color(51, 255, 204));
         fill.setText("Fill");
@@ -369,13 +374,16 @@ public class ColorChooser extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PrimaryColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrimaryColorActionPerformed
-        // TODO add your handling code here:
+        
+        frame.getInkPanel().setColor(PrimaryColor.getBackground());
     }//GEN-LAST:event_PrimaryColorActionPerformed
 
     private void SecondaryColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecondaryColorActionPerformed
-//        // TODO add your handling code here:
-        SecondaryColor.setBackground(PrimaryColor.getBackground());
-        frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
+
+        if(fill.isSelected()){
+            SecondaryColor.setBackground(PrimaryColor.getBackground());
+            frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
+        }
     }//GEN-LAST:event_SecondaryColorActionPerformed
 
     private void fillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fillActionPerformed
@@ -718,6 +726,10 @@ public class ColorChooser extends javax.swing.JPanel {
         frame.getInkPanel().setColor(PrimaryColor.getBackground());
         frame.getInkPanel().setFillColor(SecondaryColor.getBackground());
     }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void optionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_optionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

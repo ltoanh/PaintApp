@@ -62,8 +62,6 @@ public class Paint extends javax.swing.JPanel implements MouseMotionListener, Mo
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         inkPanelWidth = dim.width - 150;
         inkPanelHeight = dim.height - 160;
-
-        //fillColor = Color.pink;
         addMouseMotionListener(this);
         this.frame = frame;
         this.shapes = new Stack<NewShape>();
